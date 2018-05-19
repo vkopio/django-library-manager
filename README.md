@@ -4,3 +4,21 @@
 
 # django-library-manager
 A management system for a library using Django.
+
+## Setup development environment
+Python version 3.6 is used. Add a virtual environment for it in the project root and activate it:
+
+    python3 -m venv venv
+    source venv/bin/activate
+
+Install `pipenv` for package management:
+
+    pip install pipenv
+
+Install development packages with `pipenv`:
+
+    pipenv install -d
+
+## Run development server
+
+    python manage.py runserver
