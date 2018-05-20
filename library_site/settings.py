@@ -66,7 +66,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'library_manager.urls'
+ROOT_URLCONF = 'library_site.urls'
 
 TEMPLATES = [
     {
@@ -84,7 +84,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'library_manager.wsgi.application'
+WSGI_APPLICATION = 'library_site.wsgi.application'
 
 
 # Password validation
