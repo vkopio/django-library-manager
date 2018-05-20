@@ -2,3 +2,5 @@
 omit =
     venv/*
     manage.py
+    library_site/settings.py
+    library_site/wsgi.py
