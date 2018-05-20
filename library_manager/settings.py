@@ -1,4 +1,5 @@
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -13,13 +14,7 @@ if 'DJANGO_PRODUCTION' in os.environ:
 
     DATABASES = {
         'default': {
-            'CONN_MAX_AGE': 0,
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'PASSWORD': os.environ['DJANGO_DB_PASSWORD'],
-            'NAME': 'django',
-            'USER': 'django',
-            'HOST': 'postgres',
-            'PORT': '',
+            dj_database_url.config(conn_max_age=600, ssl_require=True)
         }
     }
 
