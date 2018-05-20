@@ -5,6 +5,8 @@
 # django-library-manager
 A management system for a library using Django.
 
+[Link to Heroku deployment](https://pure-brook-47110.herokuapp.com/)
+
 ## Setup development environment
 Python version 3.6 is used. Add a virtual environment for it in the project root and activate it:
 
