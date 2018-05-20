@@ -1,7 +1,14 @@
 language: python
-python:   3.6
-install:  pip install pipenv && pipenv install -d
+python: 3.6
+install: pip install pipenv && pipenv install -d
 script:
-  - coverage run --source='.' manage.py test
-  - coverage xml
-  - python-codacy-coverage -r coverage.xml
+- coverage run --source='.' manage.py test
+- coverage xml
+- python-codacy-coverage -r coverage.xml
+deploy:
+  provider: heroku
+  api_key:
+    secure: VVy2W1aHdgNDS+0k4LRGtbEguEHlpRyCCPQBOyZ8fBMQmr9yxhzIZ8XC1gZuZkpXnAQD9lEuAmf0ssFCtBHBIoPrlDSL1TMcuSaB+LjZVIACulszKWeMHa2Sw5/ULetNlF0carS8Tp2Af+lrtkgDybNhWeOf5eIHI00xV8nY7Miju7YZ5iFZTJ+MXMBV1rma7ldYsK8D+hM9nNzD0dOcnt0aXqzUQU9KhdhT5HbcyobiybbGb+dd1JWERcewYAar+Op697lw5INPVHHyTCo3qYMlTS60T4/LfhoYTbKjVp40/ZaT8CRYUQGU3IVfNJvvBPv9zUapKdMkg8pvAmXZ5+gZhUlecmuXdmQvpuLFnuXfykjxibeHwJeMnTvZvLxisx0zmpX2UqcBvldv5Xf/kpyVq7n/emFVM90VAbTy1gyQj6pOv8KWnQ4bfGp2FDk96uKbqYkqeKuCY9ghnFB5CQde3/OyRdgeeLwkdI3N307ZKcCY5WR5AIUkxMebYPD7H+7VlLGbXKXUFYgs2TDD9PdvYtSQ57visetcZkHFjdmEXfOTAyo/KikZDway++RD3YeTHKvbZSzfxoU1tM80CkOX7B0fsATUKdRNqJ2+fp6NSXdDUBaoPEb8N3lhbeUmnTDLC+WP9Zjp4K6KBE6+GK+4UJ7YgBW3JdcZuHGAbu4=
+  app: pure-brook-47110
+  on:
+    repo: V-Kopio/django-library-manager
