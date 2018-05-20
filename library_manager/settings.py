@@ -1,5 +1,6 @@
 import os
 import dj_database_url
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -13,9 +14,7 @@ if 'DJANGO_PRODUCTION' in os.environ:
     DEBUG = False
 
     DATABASES = {
-        'default': {
-            dj_database_url.config(conn_max_age=600, ssl_require=True)
-        }
+        'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
     }
 
     SECURE_CONTENT_TYPE_NOSNIFF = True
@@ -121,3 +120,8 @@ USE_L10N = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Heroku settings
+
+if 'DJANGO_PRODUCTION' in os.environ:
+    django_heroku.settings(locals())
