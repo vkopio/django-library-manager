@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .apps import app_dir
 from .models import Book, Author, Genre
 
 
@@ -13,4 +14,4 @@ def index(request):
         'genre_count': genre_count
     }
 
-    return render(request, 'index.html', context)
+    return render(request, app_dir('index.html'), context)
