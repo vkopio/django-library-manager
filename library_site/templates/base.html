@@ -1,0 +1,16 @@
+{% load staticfiles %}
+
+<html lang="en">
+{% include "layout/head.html" %}
+
+<body>
+{% include "layout/nav.html" %}
+
+<div class="container my-4">
+    {% block content %}{% endblock %}
+</div>
+
+{% include "layout/footer.html" %}
+{% include "layout/scripts.html" %}
+</body>
+</html>
