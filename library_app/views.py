@@ -20,3 +20,7 @@ class BookListView(generic.ListView):
 
     def get_queryset(self):
         return Book.objects.order_by('name')
+
+
+class BookDetailView(generic.DetailView):
+    model = Book
