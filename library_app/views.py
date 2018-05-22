@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.views import generic
+
 from .apps import app_dir
 from .models import Book, Author, Genre
 
@@ -15,3 +17,10 @@ def index(request):
     }
 
     return render(request, app_dir('index.html'), context)
+
+
+class BookListView(generic.ListView):
+    context_object_name = 'book_list'
+
+    def get_queryset(self):
+        return Book.objects.order_by('name')
