@@ -8,8 +8,8 @@ from .genre import Genre
 
 class Book(BaseModel):
     name = models.CharField(max_length=255)
-    isbn = models.CharField(max_length=255, validators=[validate_isbn])
-    description = models.TextField()
+    isbn = models.CharField(max_length=255, blank=True, validators=[validate_isbn])
+    description = models.TextField(blank=True)
     pub_date = models.DateField()
     authors = models.ManyToManyField(Author)
     genres = models.ManyToManyField(Genre)
