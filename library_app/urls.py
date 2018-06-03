@@ -1,6 +1,8 @@
 from django.urls import path
-
+from .apps import LibraryAppConfig
 from . import views
+
+app_name = LibraryAppConfig.name
 
 urlpatterns = [
     path('', views.index, name='index'),
