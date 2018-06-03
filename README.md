@@ -45,4 +45,5 @@ Test directory structure mimics the app structure rather than is divided by test
 
 #### Database structure
 The following diagram represents the designed database structure and not necessarily the current situation:
-[Database diagram](doc/database_diagram.png)
+
+![Database diagram](doc/database_diagram.png)
