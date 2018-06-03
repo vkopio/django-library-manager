@@ -7,9 +7,9 @@ from .models import Book, Author, Genre
 
 def index(request):
     context = {
-        'book_count': Book.objects.all().count,
-        'author_count': Author.objects.all().count,
-        'genre_count': Genre.objects.all().count
+        'book_count': Book.objects.all().count(),
+        'author_count': Author.objects.all().count(),
+        'genre_count': Genre.objects.all().count()
     }
 
     return render(request, app_dir('index.html'), context)
