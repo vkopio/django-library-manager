@@ -14,3 +14,11 @@ class BookTestCase(ExtendedTestCase):
 
         with self.assertValidationError('isbn', ['invalid-isbn is not a valid ISBN number']):
             self.book.full_clean()
+
+    def test_no_errors_are_raised_for_valid_isbn_10(self):
+        self.book.isbn = '951-98548-9-4'
+        self.book.full_clean()
+
+    def test_no_errors_are_raised_for_valid_isbn_13(self):
+        self.book.isbn = '978-951-98548-9-2'
+        self.book.full_clean()
