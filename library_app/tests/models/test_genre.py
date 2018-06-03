@@ -1,12 +1,10 @@
 from django.test import TestCase
-from library_app.models import Genre
+from library_app.tests.utils.factories import create_genre
 
 
 class GenreTestCase(TestCase):
     def setUp(self):
-        self.genre = Genre(
-            name="test-genre"
-        )
+        self.genre = create_genre('test-genre')
 
     def test_str_returns_name(self):
         self.assertEqual(self.genre.__str__(), "test-genre")
