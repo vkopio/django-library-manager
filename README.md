@@ -24,3 +24,25 @@ Install development packages with `pipenv`:
 ## Run development server
 
     python manage.py runserver
+
+## Architecture
+In a Django project the project consists of a 'site' which wraps all the Django 'apps' together. Currently the 'site' 
+is under the `library_site` directory and there is only one app under the `library_app` directory.
+
+### Site library_site
+The site combines app urls to a single `urls.py` file and contains the website layout which uses Bootstrap 4 as its
+CSS framework.
+
+### App library_app
+This app contains the core functionality. 
+
+#### Directory and file structure
+In addition to the default Django app structure, models are divided to their own files to avoid a single bloated file. 
+Also, there is the `sample` directory which contains "business" logic not specific to Django. This helps testing as the 
+whole application is not needed to be imported in order to test the business logic.
+
+Test directory structure mimics the app structure rather than is divided by test types.
+
+#### Database structure
+The following diagram represents the designed database structure and not necessarily the current situation:
+[Database diagram](doc/database_diagram.png)
