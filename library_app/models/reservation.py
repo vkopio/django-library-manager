@@ -5,13 +5,13 @@ from django.contrib.auth.models import User
 
 
 class Reservation(BaseModel):
-    book = models.OneToOneField(
+    book = models.ForeignKey(
         Book,
         on_delete=models.CASCADE,
         unique=False
     )
 
-    reserver = models.OneToOneField(
+    reserver = models.ForeignKey(
         User,
         related_name='reserver',
         on_delete=models.CASCADE,
