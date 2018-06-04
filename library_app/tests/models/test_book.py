@@ -1,5 +1,6 @@
 from library_app.tests.utils.extended_test_case import ExtendedTestCase
 from library_app.tests.utils.factories import create_book, create_reservation
+from library_app.models import Book
 from django.contrib.auth.models import User
 
 
@@ -43,3 +44,19 @@ class BookReservationTests(ExtendedTestCase):
         reservations = self.book1.reservations()
 
         self.assertEqual(list(reservations), [reservation])
+
+
+class BookManagerTests(ExtendedTestCase):
+    def setUp(self):
+        self.book1 = create_book("test-book-1", "")
+        self.book2 = create_book("test-book-2", "")
+        self.book3 = create_book("test-book-3", "")
+
+    def test_only_the_newest_is_returned_by_default(self):
+        self.assertEqual(list(Book.objects.newest()), [self.book3])
+
+    def test_the_newest_limit_param_returns_correct_amount_of_objects_in_desc_order(self):
+        self.assertEqual(list(Book.objects.newest(2)), [self.book3, self.book2])
+
+    def test_everything_is_returned_if_newest_limit_is_reached(self):
+        self.assertEqual(list(Book.objects.newest(4)), [self.book3, self.book2, self.book1])

@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from library_app.validators import validate_isbn
 from library_app.models import Author, Genre
+from .managers.book_manager import BookManager
 from ._base import BaseModel
 
 
@@ -12,6 +13,8 @@ class Book(BaseModel):
     pub_date = models.DateField()
     authors = models.ManyToManyField(Author)
     genres = models.ManyToManyField(Genre)
+
+    objects = BookManager()
 
     def reservations(self):
         from .reservation import Reservation
