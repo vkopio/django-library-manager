@@ -15,6 +15,10 @@ class Book(BaseModel):
     authors = models.ManyToManyField(Author)
     genres = models.ManyToManyField(Genre)
 
+    def reservations(self):
+        from .reservation import Reservation
+        return Reservation.objects.filter(book=self)
+
     def get_absolute_url(self):
         return reverse('library_app:book_detail', args=[str(self.id)])
 

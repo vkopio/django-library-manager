@@ -1,5 +1,5 @@
 from django.utils import timezone
-from library_app.models import Book, Author, Genre
+from library_app.models import Book, Author, Genre, Reservation
 
 
 def __time():
@@ -26,4 +26,10 @@ def create_author(first_name='', last_name=''):
 def create_genre(name=''):
     return Genre.objects.create(
         name=name,
+    )
+
+
+def create_reservation(**kwargs):
+    return Reservation.objects.create(
+        **kwargs
     )
