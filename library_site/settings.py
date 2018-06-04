@@ -43,6 +43,7 @@ else:
 # ===============
 
 ALLOWED_HOSTS = ['localhost']
+LOGIN_REDIRECT_URL = 'home'
 
 
 # Application definition
