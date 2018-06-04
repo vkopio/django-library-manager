@@ -14,6 +14,7 @@ python-stdnum = {git = "https://github.com/arthurdejong/python-stdnum.git", ref 
 [dev-packages]
 codacy-coverage = ">=1.3"
 coverage = ">=4.5"
+pyyaml = "*"
 
 [requires]
 python_version = "3.6"
