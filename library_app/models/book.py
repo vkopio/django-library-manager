@@ -1,10 +1,8 @@
 from django.db import models
 from django.urls import reverse
 from library_app.validators import validate_isbn
+from library_app.models import Author, Genre
 from ._base import BaseModel
-
-from .author import Author
-from .genre import Genre
 
 
 class Book(BaseModel):
