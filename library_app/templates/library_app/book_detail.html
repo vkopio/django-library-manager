@@ -26,4 +26,11 @@
             <td>{{ book.pub_date }}</td>
         </tr>
     </table>
+
+    {% if user.is_authenticated %}
+        <form action="{% url 'library_app:book_reservation' book.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Reserve" />
+        </form>
+    {% endif %}
 {% endblock %}
