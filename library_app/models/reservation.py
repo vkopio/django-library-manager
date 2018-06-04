@@ -20,3 +20,6 @@ class Reservation(BaseModel):
 
     def __str__(self):
         return self.book.name + ', reserver: ' + self.reserver.username
+
+    class Meta:
+        ordering = ['-creation_date']
