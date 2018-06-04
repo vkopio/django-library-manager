@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from library_app.validators import validate_isbn
 from ._base import BaseModel
 
@@ -13,6 +14,9 @@ class Book(BaseModel):
     pub_date = models.DateField()
     authors = models.ManyToManyField(Author)
     genres = models.ManyToManyField(Genre)
+
+    def get_absolute_url(self):
+        return reverse('library_app:book_detail', args=[str(self.id)])
 
     def __str__(self):
         return self.name
