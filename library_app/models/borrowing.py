@@ -9,3 +9,6 @@ class Borrowing(BaseModel):
     book = models.OneToOneField(Book, on_delete=models.CASCADE)
     borrower = models.OneToOneField(User, related_name='borrower', on_delete=models.SET_NULL, null=True)
     lender = models.OneToOneField(User, related_name='lender', on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return self.book.name + ', borrower: ' + self.borrower.username + ', due date: ' + str(self.due_date)
