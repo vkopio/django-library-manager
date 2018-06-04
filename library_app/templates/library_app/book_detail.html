@@ -25,6 +25,11 @@
             <td>Published:</td>
             <td>{{ book.pub_date }}</td>
         </tr>
+
+        <tr>
+            <td>Reservations:</td>
+            <td>{{ book.reservations.count }}</td>
+        </tr>
     </table>
 
     {% if user.is_authenticated %}
