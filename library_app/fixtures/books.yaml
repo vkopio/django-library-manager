@@ -1,0 +1,19 @@
+- model: library_app.book
+  pk: 1
+  fields:
+    name: Tuntematon sotilas
+    pub_date: 1954-12-03
+    authors: [1]
+    genres: [1]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 2
+  fields:
+    name: Sinuhe egyptiläinen
+    pub_date: 1945-01-01
+    authors: [2]
+    genres: [2]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00

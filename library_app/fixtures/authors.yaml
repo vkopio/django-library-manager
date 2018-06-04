@@ -1,0 +1,17 @@
+- model: library_app.author
+  pk: 1
+  fields:
+    first_name: Väinö
+    last_name: Linna
+    birth_date: 1920-12-20
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.author
+  pk: 2
+  fields:
+    first_name: Mika
+    last_name: Waltari
+    birth_date: 1908-09-19
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00

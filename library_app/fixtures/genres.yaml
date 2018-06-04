@@ -1,0 +1,13 @@
+- model: library_app.genre
+  pk: 1
+  fields:
+    name: Sotakirjallisuus
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.genre
+  pk: 2
+  fields:
+    name: Historiallinen romaani
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
