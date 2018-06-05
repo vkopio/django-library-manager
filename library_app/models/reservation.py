@@ -1,7 +1,6 @@
 from django.db import models
+from library_app.models import Book, LibraryUser
 from ._base import BaseModel
-from .book import Book
-from django.contrib.auth.models import User
 
 
 class Reservation(BaseModel):
@@ -12,7 +11,7 @@ class Reservation(BaseModel):
     )
 
     reserver = models.ForeignKey(
-        User,
+        LibraryUser,
         related_name='reserver',
         on_delete=models.CASCADE,
         unique=False
