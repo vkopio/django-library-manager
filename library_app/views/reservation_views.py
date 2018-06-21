@@ -18,6 +18,6 @@ def reservation_create(request, book_id):
             'errors': error.messages
         }
 
-        return render(request, 'library_app/index.html', context)
+        return render(request, 'library_app/book_detail.html', context)
 
     return redirect(book)
