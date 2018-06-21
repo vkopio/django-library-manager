@@ -1,9 +1,31 @@
 from django.test import TestCase
+from django.contrib import auth
 from django.core.exceptions import ValidationError
 from contextlib import contextmanager
+from library_app.models import LibraryUser
 
 
 class ExtendedTestCase(TestCase):
+    @classmethod
+    def setUpClass(cls):
+        LibraryUser.objects.create_user(
+            username='test_user',
+            password='test',
+            email='test@test.test'
+        )
+
+    @classmethod
+    def tearDownClass(cls):
+        LibraryUser.objects.all().delete()
+
+    def login(self):
+        self.client.login(username='test_user', password='test')
+
+    def logout(self):
+        self.client.logout()
+
+    def user(self):
+        return auth.get_user(self.client)
 
     @contextmanager
     def assertValidationError(self, field, error_messages=None):
