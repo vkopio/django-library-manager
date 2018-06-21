@@ -26,11 +26,15 @@ class Reservation(BaseModel):
         if reserved_the_same_book:
             raise ValidationError(_('User has already reserved this book.'))
 
-        if reservation_count >= 3:
+        if reservation_count >= self.__max_reservation_count():
             raise ValidationError(_('User has reserved maximum number of books.'))
 
     def __str__(self):
         return self.book.name + ', reserver: ' + self.reserver.username
+    
+    @staticmethod
+    def __max_reservation_count():
+        return 3
 
     class Meta:
         ordering = ['-creation_date']
