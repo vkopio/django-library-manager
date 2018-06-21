@@ -3,17 +3,14 @@
 {% block content %}
     <h1>{{ book }}</h1>
 
+    <p>{{ book.description }}</p>
+
     <table class="table">
         <tr>
             <td>Author:</td>
             <td>
                 {{ book.authors.all|join:", " }}
             </td>
-        </tr>
-
-        <tr>
-            <td>Description:</td>
-            <td>{{ book.description }}</td>
         </tr>
 
         <tr>
