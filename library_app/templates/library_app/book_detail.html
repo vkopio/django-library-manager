@@ -30,6 +30,10 @@
     </table>
 
     {% if user.is_authenticated %}
+        {% if reservation_queue_position %}
+            Your position in reservation queue: {{ reservation_queue_position }}
+        {% endif %}
+
         <form action="{% url 'library_app:reservation_create' book.id %}" method="post">
             {% csrf_token %}
             <input type="submit" value="Reserve" />

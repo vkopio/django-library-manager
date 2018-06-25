@@ -1,5 +1,5 @@
 from django.views import generic
-from library_app.models import Book
+from library_app.models import Book, as_library_user
 
 
 class BookListView(generic.ListView):
@@ -11,3 +11,12 @@ class BookListView(generic.ListView):
 
 class BookDetailView(generic.DetailView):
     model = Book
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = as_library_user(self.request.user)
+
+        if user:
+            context['reservation_queue_position'] = user.reservation_queue_position(book=self.get_object())
+
+        return context
