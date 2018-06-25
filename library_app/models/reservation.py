@@ -31,7 +31,7 @@ class Reservation(BaseModel):
 
     def __str__(self):
         return self.book.name + ', reserver: ' + self.reserver.username
-    
+
     @staticmethod
     def __max_reservation_count():
         return 3
