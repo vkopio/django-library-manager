@@ -1,5 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from ._base import BaseModel
 
 
@@ -19,6 +21,17 @@ class LibraryUser(BaseModel):
                 return i + 1
 
         return 0
+
+
+@receiver(post_save, sender=User)
+def create_library_user(sender, instance, created, **kwargs):
+    if created:
+        LibraryUser.objects.create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_library_user(sender, instance, **kwargs):
+    instance.libraryuser.save()
 
 
 def as_library_user(user):
