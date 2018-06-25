@@ -1,9 +1,10 @@
 from django.contrib.auth.models import User
+from django.db import models
+from ._base import BaseModel
 
 
-class LibraryUser(User):
-    class Meta:
-        proxy = True
+class LibraryUser(BaseModel):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def reservations(self):
         from .reservation import Reservation
