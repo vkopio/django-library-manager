@@ -21,3 +21,13 @@ def reservation_create(request, book_id):
         return render(request, 'library_app/book_detail.html', context)
 
     return redirect(book)
+
+
+@login_required
+def reservation_delete(request, book_id):
+    book = Book.objects.get(pk=book_id)
+    reservation = Reservation.objects.get(book=book, reserver=request.user.libraryuser)
+
+    reservation.delete()
+
+    return redirect(book)

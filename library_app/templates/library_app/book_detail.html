@@ -31,12 +31,19 @@
 
     {% if user.is_authenticated %}
         {% if reservation_queue_position %}
+            <form action="{% url 'library_app:reservation_delete' book.id %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Cancel reservation" />
+            </form>
+
             Your position in reservation queue: {{ reservation_queue_position }}
+        {% else %}
+            <form action="{% url 'library_app:reservation_create' book.id %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Reserve" />
+            </form>
         {% endif %}
 
-        <form action="{% url 'library_app:reservation_create' book.id %}" method="post">
-            {% csrf_token %}
-            <input type="submit" value="Reserve" />
-        </form>
+
     {% endif %}
 {% endblock %}
