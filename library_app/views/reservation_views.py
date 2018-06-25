@@ -9,7 +9,7 @@ def reservation_create(request, book_id):
     book = Book.objects.get(pk=book_id)
 
     try:
-        reservation = Reservation(book=book, reserver=request.user)
+        reservation = Reservation(book=book, reserver=request.user.libraryuser)
         reservation.full_clean()
         reservation.save()
     except ValidationError as error:
