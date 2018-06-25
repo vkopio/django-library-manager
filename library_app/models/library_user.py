@@ -32,11 +32,3 @@ def create_library_user(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_library_user(sender, instance, **kwargs):
     instance.libraryuser.save()
-
-
-def as_library_user(user):
-    if user.__class__.__name__ != 'User':
-        return None
-
-    user.__class__ = LibraryUser
-    return user
