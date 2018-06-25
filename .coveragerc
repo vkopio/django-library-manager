@@ -2,6 +2,7 @@
 omit =
     venv/*
     */tests/*
+    */migrations/*
     manage.py
     library_site/settings.py
     library_site/wsgi.py
