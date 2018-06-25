@@ -14,7 +14,7 @@ class BookViewTests(ExtendedTestCase):
 
         reservation = Reservation.objects.last()
 
-        self.assertEqual(reservation.reserver, self.user())
+        self.assertEqual(reservation.reserver, self.user().libraryuser)
         self.assertEqual(reservation.book, self.book)
         self.assertEqual(self.response.status_code, 302)
 

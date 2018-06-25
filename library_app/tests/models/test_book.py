@@ -38,9 +38,9 @@ class BookReservationTests(ExtendedTestCase):
         self.assertEqual(list(reservations), [])
 
     def test_reservations_are_returned_only_for_the_specified_book(self):
-        create_reservation(book=self.book2, reserver=self.reserver)
+        create_reservation(book=self.book2, reserver=self.reserver.libraryuser)
 
-        reservation = create_reservation(book=self.book1, reserver=self.reserver)
+        reservation = create_reservation(book=self.book1, reserver=self.reserver.libraryuser)
         reservations = self.book1.reservations()
 
         self.assertEqual(list(reservations), [reservation])
