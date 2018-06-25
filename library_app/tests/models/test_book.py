@@ -1,5 +1,5 @@
-from library_app.tests.utils.extended_test_case import ExtendedTestCase
-from library_app.tests.utils.factories import create_book, create_reservation
+from library_app.tests.extended_test_case import ExtendedTestCase
+from library_app.sample.utilities.factories import create_book, create_reservation
 from library_app.models import Book
 from django.contrib.auth.models import User
 

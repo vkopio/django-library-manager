@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
-from library_app.tests.utils.factories import create_book, create_author, create_genre
+from library_app.sample.utilities.factories import create_book, create_author, create_genre
 
 
 class IndexViewTests(TestCase):

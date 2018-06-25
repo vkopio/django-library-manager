@@ -1,5 +1,5 @@
 from django.test import TestCase
-from library_app.tests.utils.factories import create_author
+from library_app.sample.utilities.factories import create_author
 
 
 class AuthorTestCase(TestCase):

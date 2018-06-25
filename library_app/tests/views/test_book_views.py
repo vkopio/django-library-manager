@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
-from library_app.tests.utils.factories import create_book
+from library_app.sample.utilities.factories import create_book
 
 
 class BookViewTests(TestCase):
