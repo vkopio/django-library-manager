@@ -8,7 +8,7 @@ from contextlib import contextmanager
 class ExtendedTestCase(TestCase):
     @classmethod
     def setUpClass(cls):
-        User.objects.create_user(
+        cls.user = User.objects.create_user(
             username='test_user',
             password='test',
             email='test@test.test'
@@ -19,7 +19,7 @@ class ExtendedTestCase(TestCase):
         User.objects.all().delete()
 
     def login(self):
-        self.client.login(username='test_user', password='test')
+        self.client.force_login(self.user)
 
     def logout(self):
         self.client.logout()
