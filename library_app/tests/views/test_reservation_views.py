@@ -4,7 +4,7 @@ from library_app.sample.utilities.factories import create_book
 from library_app.models import Reservation
 
 
-class BookViewTests(ExtendedTestCase):
+class ReservationViewTests(ExtendedTestCase):
     def setUp(self):
         self.book = create_book('test_book')
 
