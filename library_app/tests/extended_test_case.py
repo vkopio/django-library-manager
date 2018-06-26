@@ -1,5 +1,4 @@
 from django.test import TestCase
-from django.contrib import auth
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from contextlib import contextmanager
@@ -23,9 +22,6 @@ class ExtendedTestCase(TestCase):
 
     def logout(self):
         self.client.logout()
-
-    def user(self):
-        return auth.get_user(self.client)
 
     @contextmanager
     def assertValidationError(self, field, error_messages=None):
