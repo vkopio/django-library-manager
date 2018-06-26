@@ -10,4 +10,4 @@ class Borrowing(BaseModel):
     lender = models.OneToOneField(LibraryUser, related_name='lender', on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return self.book.name + ', borrower: ' + self.borrower.username + ', due date: ' + str(self.due_date)
+        return self.book.name + ', borrower: ' + self.borrower.user.username + ', due date: ' + str(self.due_date)
