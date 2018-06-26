@@ -38,8 +38,7 @@ This app contains the core functionality.
 
 #### Directory and file structure
 In addition to the default Django app structure, models are divided to their own files to avoid a single bloated file. 
-Also, there is the `sample` directory which contains "business" logic not specific to Django. This helps testing as the 
-whole application is not needed to be imported in order to test the business logic.
+Also, there is the `sample` directory which contains "business" logic.
 
 Test directory structure mimics the app structure rather than is divided by test types.
 
