@@ -8,6 +8,10 @@ from ._base import BaseModel
 class LibraryUser(BaseModel):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
+    def borrowings(self):
+        from .borrowing import Borrowing
+        return Borrowing.objects.filter(borrower=self)
+
     def reservations(self):
         from .reservation import Reservation
         return Reservation.objects.filter(reserver=self)
