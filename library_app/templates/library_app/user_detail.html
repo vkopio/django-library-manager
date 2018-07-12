@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ user.username }}</h1>
+
+    <h2>Borrowed books</h2>
+
+    {% if borrowings %}
+        <p>You have borrowings.</p>
+    {% else %}
+        <p>You have not borrowed any books.</p>
+    {% endif %}
+
+    <h2>Reserved books</h2>
+
+    {% if reservations %}
+        <p>You have reservations.</p>
+    {% else %}
+        <p>You have not reserved any books.</p>
+    {% endif %}
+{% endblock %}
