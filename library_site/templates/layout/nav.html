@@ -12,9 +12,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'library_app:book_list' %}">Books</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
+
                 <li class="nav-item">
                     {% if user.is_authenticated %}
                         <li class="nav-item dropdown">
@@ -23,8 +21,6 @@
                                 {{ user.username }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-
                                 {% if user.is_staff %}
                                     <a class="dropdown-item" href="/admin/">Admin</a>
                                 {% endif %}
