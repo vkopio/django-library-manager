@@ -1,6 +1,5 @@
-from django.shortcuts import redirect, render, get_object_or_404
+from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from library_app.models import Book
 
 
 @login_required
