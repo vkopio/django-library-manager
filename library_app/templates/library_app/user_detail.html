@@ -1,52 +1,8 @@
 {% extends "base.html" %}
-{% load reservation_tags %}
 
 {% block content %}
     <h1>{{ user.username }}</h1>
 
-    <h2>Borrowed books</h2>
-
-    {% if borrowings %}
-        <table class="table">
-            <tr>
-                <th class="w-75">Book</th>
-                <th>Due date</th>
-            </tr>
-
-            {% for borrowing in borrowings %}
-                <tr>
-                    <td>
-                        <a href="{% url 'library_app:book_detail' borrowing.book.id %}">{{ borrowing.book.name }}</a>
-                    </td>
-
-                    <td>{{ borrowing.due_date }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-    {% else %}
-        <p>You have not borrowed any books.</p>
-    {% endif %}
-
-    <h2>Reserved books</h2>
-
-    {% if reservations %}
-        <table class="table">
-            <tr>
-                <th class="w-75">Book</th>
-                <th>Queue position</th>
-            </tr>
-
-            {% for reservation in reservations %}
-                <tr>
-                    <td>
-                        <a href="{% url 'library_app:book_detail' reservation.book.id %}">{{ reservation.book.name }}</a>
-                    </td>
-
-                    <td>{% reservation_queue_position user.libraryuser reservation.book.id %}</td>
-                </tr>
-            {% endfor %}
-        </table>
-    {% else %}
-        <p>You have not reserved any books.</p>
-    {% endif %}
+    {% include "library_app/_user_borrowings.html" %}
+    {% include "library_app/_user_reservations.html" %}
 {% endblock %}
