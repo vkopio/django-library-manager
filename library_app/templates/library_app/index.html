@@ -2,36 +2,36 @@
 
 {% block content %}
 
-<div class="card">
-  <div class="card-header">
-      <b>Overall info</b>
-  </div>
+    <div class="card">
+        <div class="card-header">
+            <b>Overall info</b>
+        </div>
 
-  <div class="card-body">
-    <p class="card-text">
-        There are {{ book_count }} books by {{ author_count }} authors in {{ genre_count }} genres in this library.
-    </p>
-  </div>
-</div>
+        <div class="card-body">
+            <p class="card-text">
+                There are {{ book_count }} books by {{ author_count }} authors in {{ genre_count }} genres in this library.
+            </p>
+        </div>
+    </div>
 
-<div class="alert alert-primary" role="alert">
-    <h1>Latest books</h1>
+    <div class="alert alert-primary" role="alert">
+        <h1>Latest books</h1>
 
-    <ul>
-        {% for book in newest_books %}
-            <li>{{ book }}</li>
-        {% endfor %}
-    </ul>
-</div>
+        <ul>
+            {% for book in newest_books %}
+                <li>{{ book }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 
-<div class="alert alert-primary" role="alert">
-    <h1>Most borrowed books</h1>
+    <div class="alert alert-primary" role="alert">
+        <h1>Most borrowed books</h1>
 
-    <ul>
-        {% for book in most_borrowed_books %}
-            <li>{{ book }}</li>
-        {% endfor %}
-    </ul>
-</div>
+        <ul>
+            {% for book in most_borrowed_books %}
+                <li>{{ book }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 
 {% endblock %}
