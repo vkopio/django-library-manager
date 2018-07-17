@@ -2,8 +2,16 @@
 
 {% block content %}
 
-<div class="alert alert-primary" role="alert">
-    There are {{ book_count }} books by {{ author_count }} authors in {{ genre_count }} genres in this library.
+<div class="card">
+  <div class="card-header">
+      <b>Overall info</b>
+  </div>
+
+  <div class="card-body">
+    <p class="card-text">
+        There are {{ book_count }} books by {{ author_count }} authors in {{ genre_count }} genres in this library.
+    </p>
+  </div>
 </div>
 
 <div class="alert alert-primary" role="alert">
