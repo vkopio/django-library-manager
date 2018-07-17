@@ -13,6 +13,7 @@ class Book(BaseModel):
     pub_date = models.DateField()
     authors = models.ManyToManyField(Author)
     genres = models.ManyToManyField(Genre)
+    borrowings_count = models.PositiveIntegerField(default=0)
 
     objects = BookManager()
 
