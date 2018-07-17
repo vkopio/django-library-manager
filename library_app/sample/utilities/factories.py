@@ -6,12 +6,13 @@ def __time():
     return timezone.now()
 
 
-def create_book(name='', isbn='', description=''):
+def create_book(name='', isbn='', description='', **kwargs):
     return Book.objects.create(
         name=name,
         isbn=isbn,
         description=description,
-        pub_date=__time()
+        pub_date=__time(),
+        **kwargs
     )
 
 
