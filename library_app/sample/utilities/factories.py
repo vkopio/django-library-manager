@@ -1,5 +1,5 @@
 from django.utils import timezone
-from library_app.models import Book, Author, Genre, Reservation
+from library_app.models import Book, Author, Genre, Reservation, Borrowing
 
 
 def __time():
@@ -31,5 +31,12 @@ def create_genre(name=''):
 
 def create_reservation(**kwargs):
     return Reservation.objects.create(
+        **kwargs
+    )
+
+
+def create_borrowing(**kwargs):
+    return Borrowing.objects.create(
+        due_date=__time(),
         **kwargs
     )
