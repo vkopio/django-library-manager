@@ -20,7 +20,9 @@
         </div>
         <ul class="list-group list-group-flush">
             {% for book in newest_books %}
-                <li class="list-group-item">{{ book }}</li>
+                <li class="list-group-item">
+                    <a href="{% url 'library_app:book_detail' book.id %}">{{book }}</a>
+                </li>
             {% endfor %}
         </ul>
     </div>
@@ -31,7 +33,9 @@
         </div>
         <ul class="list-group list-group-flush">
             {% for book in most_borrowed_books %}
-                <li class="list-group-item">{{ book }}</li>
+                <li class="list-group-item">
+                    <a href="{% url 'library_app:book_detail' book.id %}">{{book }}</a>
+                </li>
             {% endfor %}
         </ul>
     </div>
