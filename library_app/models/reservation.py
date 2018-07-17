@@ -37,4 +37,4 @@ class Reservation(BaseModel):
         return 3
 
     class Meta:
-        ordering = ['-creation_date']
+        ordering = ['creation_date']
