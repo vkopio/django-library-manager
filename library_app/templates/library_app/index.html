@@ -14,22 +14,24 @@
         </div>
     </div>
 
-    <div class="alert alert-primary" role="alert">
-        <h1>Latest books</h1>
-
-        <ul>
+    <div class="card mt-5">
+        <div class="card-header">
+            <b>Latest books</b>
+        </div>
+        <ul class="list-group list-group-flush">
             {% for book in newest_books %}
-                <li>{{ book }}</li>
+                <li class="list-group-item">{{ book }}</li>
             {% endfor %}
         </ul>
     </div>
 
-    <div class="alert alert-primary" role="alert">
-        <h1>Most borrowed books</h1>
-
-        <ul>
+    <div class="card my-5">
+        <div class="card-header">
+            <b>Most borrowed books</b>
+        </div>
+        <ul class="list-group list-group-flush">
             {% for book in most_borrowed_books %}
-                <li>{{ book }}</li>
+                <li class="list-group-item">{{ book }}</li>
             {% endfor %}
         </ul>
     </div>
