@@ -48,9 +48,9 @@ class BookReservationTests(ExtendedTestCase):
 
 class BookManagerTests(ExtendedTestCase):
     def setUp(self):
-        self.book1 = create_book("test-book-1", "")
-        self.book2 = create_book("test-book-2", "")
-        self.book3 = create_book("test-book-3", "")
+        self.book1 = create_book("test-book-1", borrowings_count=2)
+        self.book2 = create_book("test-book-2", borrowings_count=0)
+        self.book3 = create_book("test-book-3", borrowings_count=1)
 
     def test_only_the_newest_is_returned_by_default(self):
         self.assertEqual(list(Book.objects.newest()), [self.book3])
@@ -60,3 +60,12 @@ class BookManagerTests(ExtendedTestCase):
 
     def test_everything_is_returned_if_newest_limit_is_reached(self):
         self.assertEqual(list(Book.objects.newest(4)), [self.book3, self.book2, self.book1])
+
+    def test_only_the_most_borrowed_is_returned_by_default(self):
+        self.assertEqual(list(Book.objects.most_borrowed()), [self.book1])
+
+    def test_the_most_borrowed_limit_param_returns_correct_amount_of_objects_in_desc_order(self):
+        self.assertEqual(list(Book.objects.most_borrowed(2)), [self.book1, self.book3])
+
+    def test_everything_is_returned_if_most_borrowed_limit_is_reached(self):
+        self.assertEqual(list(Book.objects.most_borrowed(4)), [self.book1, self.book3, self.book2])
