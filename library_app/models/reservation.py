@@ -30,7 +30,7 @@ class Reservation(BaseModel):
             raise ValidationError(_('User has reserved maximum number of books.'))
 
     def __str__(self):
-        return self.book.name + ', reserver: ' + self.reserver.username
+        return self.book.name + ', reserver: ' + self.reserver.user.username
 
     @staticmethod
     def __max_reservation_count():
