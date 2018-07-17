@@ -35,8 +35,11 @@ def create_reservation(**kwargs):
     )
 
 
-def create_borrowing(**kwargs):
+def create_borrowing(due_date=None, **kwargs):
+    if not due_date:
+        due_date = __time()
+
     return Borrowing.objects.create(
-        due_date=__time(),
+        due_date=due_date,
         **kwargs
     )
