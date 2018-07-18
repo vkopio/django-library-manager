@@ -16,6 +16,7 @@ class GenreAdmin(admin.ModelAdmin):
 
 class BorrowingAdmin(admin.ModelAdmin):
     list_display = ('book', 'borrower', 'lender', 'due_date', 'creation_date')
+    exclude = ['lender', ]
 
 
 class ReservationAdmin(admin.ModelAdmin):
