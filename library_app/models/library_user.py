@@ -26,6 +26,15 @@ class LibraryUser(BaseModel):
 
         return 0
 
+    def __str__(self):
+        first_name = self.user.first_name
+        last_name = self.user.last_name
+
+        if first_name and last_name:
+            return first_name + " " + last_name
+
+        return self.user.username
+
 
 @receiver(post_save, sender=User)
 def create_library_user(sender, instance, created, **kwargs):
