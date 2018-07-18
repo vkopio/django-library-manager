@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top py-3">
-    <div class="container">
+    <div class="container small text-uppercase font-weight-bold">
         <a class="navbar-brand" href="{% url 'library_app:index' %}">Library Manager</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -13,28 +13,27 @@
                     <a class="nav-link" href="{% url 'library_app:book_list' %}">Books</a>
                 </li>
 
-                <li class="nav-item">
-                    {% if user.is_authenticated %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{ user.username }}
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{% url 'library_app:user_detail' %}">Profile</a>
 
-                                {% if user.is_staff %}
-                                    <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
-                                {% endif %}
-
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
-                            </div>
+                {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
                         </li>
-                    {% else %}
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>
                     {% endif %}
-                </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'library_app:user_detail' %}">{{ user.username }}</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                {% endif %}
+
             </ul>
         </div>
     </div>
