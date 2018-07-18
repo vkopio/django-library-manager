@@ -23,6 +23,21 @@
             <td>{{ book.pub_date }}</td>
         </tr>
 
+        {% if book.borrowing %}
+            <tr>
+                <td>Currently borrowed:</td>
+                <td>
+                    {{ book.borrowing.creation_date|date:"d.m.Y" }} –
+                    {{ book.borrowing.due_date|date:"d.m.Y" }}
+                </td>
+            </tr>
+        {% endif %}
+
+        <tr>
+            <td>Times borrowed:</td>
+            <td>{{ book.borrowings_count }}</td>
+        </tr>
+
         <tr>
             <td>Reservations:</td>
             <td>{{ book.reservations.count }}</td>
