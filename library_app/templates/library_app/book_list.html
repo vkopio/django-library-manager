@@ -4,13 +4,23 @@
     <h1>Books</h1>
 
     {% if books %}
-        <ul>
+        <table class="table">
+            <tr>
+                <th>Book</th>
+                <th>Authors</th>
+                <th>Reservations</th>
+                <th>Return date</th>
+            </tr>
+
             {% for book in books %}
-                <li>
-                    <a href="{% url 'library_app:book_detail' book.id %}">{{ book }}</a>
-                </li>
+                <tr>
+                    <td><a href="{% url 'library_app:book_detail' book.id %}">{{ book.name }}</a></td>
+                    <td>{{ book.authors.all|join:", " }}</td>
+                    <td>{{ book.reservations.count }}</td>
+                    <td>{{ book.borrowing.due_date|date:"d.m.Y" }}</td>
+                </tr>
             {% endfor %}
-        </ul>
+        </table>
 
         {% include 'library_app/_book_list_pagination.html' %}
     {% else %}
