@@ -18,6 +18,11 @@ class BorrowingAdmin(admin.ModelAdmin):
     list_display = ('book', 'borrower', 'lender', 'due_date', 'creation_date')
     exclude = ['lender', ]
 
+    def save_model(self, request, obj, form, change):
+        obj.lender = request.user.libraryuser
+
+        super().save_model(request, obj, form, change)
+
 
 class ReservationAdmin(admin.ModelAdmin):
     list_display = ('book', 'reserver', 'creation_date')
