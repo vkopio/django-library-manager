@@ -3,7 +3,7 @@ from library_app.models import Book
 
 
 class BookListView(generic.ListView):
-    context_object_name = 'book_list'
+    context_object_name = 'books'
 
     def get_queryset(self):
         return Book.objects.order_by('name')
