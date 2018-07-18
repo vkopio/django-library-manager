@@ -11,6 +11,8 @@
                 </li>
             {% endfor %}
         </ul>
+
+        {% include 'library_app/_book_list_pagination.html' %}
     {% else %}
         No books found.
     {% endif %}
