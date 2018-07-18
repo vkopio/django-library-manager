@@ -7,7 +7,7 @@ class AuthorAdmin(admin.ModelAdmin):
 
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('name', 'pub_date', 'creation_date', 'modification_date')
+    list_display = ('name', 'pub_date', 'borrowings_count', 'creation_date', 'modification_date')
 
 
 class GenreAdmin(admin.ModelAdmin):
