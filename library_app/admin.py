@@ -8,6 +8,7 @@ class AuthorAdmin(admin.ModelAdmin):
 
 class BookAdmin(admin.ModelAdmin):
     list_display = ('name', 'pub_date', 'borrowings_count', 'creation_date', 'modification_date')
+    exclude = ['borrowings_count', ]
 
 
 class GenreAdmin(admin.ModelAdmin):
