@@ -3,11 +3,15 @@
 {% block content %}
     <h1>Books</h1>
 
-    <ul>
-        {% for book in books %}
-            <li>
-                <a href="{% url 'library_app:book_detail' book.id %}">{{ book }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+    {% if books %}
+        <ul>
+            {% for book in books %}
+                <li>
+                    <a href="{% url 'library_app:book_detail' book.id %}">{{ book }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        No books found.
+    {% endif %}
 {% endblock %}
