@@ -24,10 +24,10 @@ class Reservation(BaseModel):
         reservation_count = Reservation.objects.filter(reserver=self.reserver).count()
 
         if reserved_the_same_book:
-            raise ValidationError(_('User has already reserved this book.'))
+            raise ValidationError(_('You have already reserved this book.'))
 
         if reservation_count >= self.__max_reservation_count():
-            raise ValidationError(_('User has reserved maximum number of books.'))
+            raise ValidationError(_('You have reserved maximum number of books.'))
 
     def __str__(self):
         return self.book.name + ', reserver: ' + self.reserver.user.username

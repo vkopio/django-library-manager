@@ -26,7 +26,7 @@ class ReservationViewTests(ExtendedTestCase):
         messages = list(get_messages(self.response.wsgi_request))
 
         self.assertEqual(Reservation.objects.count(), 1)
-        self.assertEqual(str(messages[0]), 'User has already reserved this book.')
+        self.assertEqual(str(messages[0]), 'You have already reserved this book.')
 
     def test_cannot_reserve_a_book_if_not_logged_in(self):
         self.logout()
@@ -48,7 +48,7 @@ class ReservationViewTests(ExtendedTestCase):
         messages = list(get_messages(self.response.wsgi_request))
 
         self.assertEqual(Reservation.objects.count(), 3)
-        self.assertEqual(str(messages[0]), 'User has reserved maximum number of books.')
+        self.assertEqual(str(messages[0]), 'You have reserved maximum number of books.')
 
     def test_user_can_cancel_a_reservation(self):
         self.__post_reservation_create(self.book.id)
