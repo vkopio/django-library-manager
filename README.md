@@ -56,7 +56,8 @@ The `test` directory structure mimics the app structure rather than being divide
 
 #### Database structure
 The following diagram represents the database structure of `library_app`. If there are `many-to-many` relations between
-models in the diagram, there is a junction table between them.
+models in the diagram, there is a junction table between them. `LibraryUser` is restricted having maximum of three
+`Reservation`s at given time on application level, thus not represented in the diagram.
 
 ![Database diagram](doc/database_diagram.png)
 
