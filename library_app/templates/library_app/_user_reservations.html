@@ -1,24 +1,34 @@
 {% load reservation_tags %}
 
-<h2>Reserved books</h2>
+<div class="card">
+    <div class="card-header">
+        <b>Reserved books</b>
+        <span class="badge badge-secondary ml-1">{{ reservations.count }} / 3</span>
+    </div>
 
-{% if reservations %}
-    <table class="table">
-        <tr>
-            <th class="w-75">Book</th>
-            <th>Queue position</th>
-        </tr>
+    {% if reservations %}
+        <div class="card-body py-0 px-2">
+            <table class="table card-text">
+                <tr>
+                    <th class="w-75">Book</th>
+                    <th>Queue position</th>
+                </tr>
 
-        {% for reservation in reservations %}
-            <tr>
-                <td>
-                    <a href="{% url 'library_app:book_detail' reservation.book.id %}">{{ reservation.book.name }}</a>
-                </td>
+                {% for reservation in reservations %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'library_app:book_detail' reservation.book.id %}">{{ reservation.book.name }}</a>
+                        </td>
 
-                <td>{% reservation_queue_position user.libraryuser reservation.book.id %}</td>
-            </tr>
-        {% endfor %}
-    </table>
-{% else %}
-    <p>You have not reserved any books.</p>
-{% endif %}
+                        <td>{% reservation_queue_position user.libraryuser reservation.book.id %}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% else %}
+        <div class="card-body">
+            <p class="card-text">You have not reserved any books.</p>
+        </div>
+    {% endif %}
+
+</div>

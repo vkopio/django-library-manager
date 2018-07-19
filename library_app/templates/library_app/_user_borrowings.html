@@ -1,22 +1,30 @@
-<h2>Borrowed books</h2>
+<div class="card my-4">
+    <div class="card-header">
+        <b>Borrowed books</b>
+    </div>
 
-{% if borrowings %}
-    <table class="table">
-        <tr>
-            <th class="w-75">Book</th>
-            <th>Due date</th>
-        </tr>
+    {% if borrowings %}
+        <div class="card-body py-0 px-2">
+            <table class="table card-text">
+                <tr>
+                    <th class="w-75">Book</th>
+                    <th>Due date</th>
+                </tr>
 
-        {% for borrowing in borrowings %}
-            <tr>
-                <td>
-                    <a href="{% url 'library_app:book_detail' borrowing.book.id %}">{{ borrowing.book.name }}</a>
-                </td>
+                {% for borrowing in borrowings %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'library_app:book_detail' borrowing.book.id %}">{{ borrowing.book.name }}</a>
+                        </td>
 
-                <td>{{ borrowing.due_date }}</td>
-            </tr>
-        {% endfor %}
-    </table>
-{% else %}
-    <p>You have not borrowed any books.</p>
-{% endif %}
+                        <td>{{ borrowing.due_date }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% else %}
+        <div class="card-body">
+            <p class="card-text">You have not borrowed any books.</p>
+        </div>
+    {% endif %}
+</div>
