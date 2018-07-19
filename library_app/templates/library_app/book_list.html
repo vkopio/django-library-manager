@@ -23,7 +23,7 @@
                     <td><a href="{% url 'library_app:book_detail' book.id %}">{{ book.name }}</a></td>
                     <td>{{ book.authors.all|join:", " }}</td>
                     <td>{{ book.genres.all|join:", " }}</td>
-                    <td>{{ book.reservations.count }}</td>
+                    <td>{{ book.reservation__count }}</td>
                     <td>{{ book.borrowing.due_date|date:"d.m.Y" }}</td>
                 </tr>
             {% endfor %}

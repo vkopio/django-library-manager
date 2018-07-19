@@ -8,19 +8,19 @@ class BookListView(generic.ListView):
     paginate_by = 20
 
     def get_queryset(self):
-        search = self.request.GET.get('search', False)
+        search_params = self.request.GET.get('search', False)
 
-        if search and connection.vendor == 'postgresql':
-            return Book.objects.filter(name__search=search)
+        if search_params and connection.vendor == 'postgresql':
+            return Book.objects.search_by_name(search_params)
 
-        return Book.objects.order_by('name')
+        return Book.objects.all_by_name()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        search = self.request.GET.get('search', '')
+        search_params = self.request.GET.get('search', '')
 
-        if search:
-            context['search_params'] = '&search=' + search
+        if search_params:
+            context['search_params'] = '&search=' + search_params
 
         return context
 
