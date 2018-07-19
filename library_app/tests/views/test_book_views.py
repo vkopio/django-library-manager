@@ -12,7 +12,7 @@ class BookViewTests(ExtendedTestCase):
         book = create_book('test', 'test')
 
         self.__get_list_response()
-        self.assertIn(book, self.response.context['book_list'])
+        self.assertIn(book, self.response.context['books'])
         self.assertEqual(self.response.status_code, 200)
 
     def test_detail_with_valid_id(self):
