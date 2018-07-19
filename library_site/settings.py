@@ -24,6 +24,9 @@ if 'DJANGO_PRODUCTION' in os.environ:
     CSRF_COOKIE_SECURE = True
     X_FRAME_OPTIONS = 'DENY'
 
+    if 'DJANGO_ADMIN_EMAIL' in os.environ:
+        ADMINS = [('LibraryAdmin', os.environ['DJANGO_ADMIN_EMAIL'])]
+
 else:
     # DEVELOPMENT SETTINGS
     # ====================
