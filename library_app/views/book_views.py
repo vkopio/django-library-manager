@@ -5,7 +5,7 @@ from library_app.models import Book
 
 class BookListView(generic.ListView):
     context_object_name = 'books'
-    paginate_by = 1
+    paginate_by = 20
 
     def get_queryset(self):
         search = self.request.GET.get('search', False)
