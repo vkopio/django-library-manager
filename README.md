@@ -25,6 +25,9 @@ Install development packages with `pipenv`:
 
     pipenv install -d
 
+Seed development database:
+
+    python manage.py loaddata library_app/fixtures/*
 
 --------------------------------
 
