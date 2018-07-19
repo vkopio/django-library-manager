@@ -7,6 +7,10 @@ A management system for a library using Django.
 
 [Link to Heroku deployment](https://pure-brook-47110.herokuapp.com/)
 
+
+--------------------------------
+
+
 ## Setup development environment
 Python version 3.6 is used. Add a virtual environment for it in the project root and activate it:
 
@@ -21,9 +25,17 @@ Install development packages with `pipenv`:
 
     pipenv install -d
 
+
+--------------------------------
+
+
 ## Run development server
 
     python manage.py runserver
+
+
+--------------------------------
+
 
 ## Architecture
 In a Django project the project consists of a 'site' which wraps all the Django 'apps' together. Currently the 'site' 
