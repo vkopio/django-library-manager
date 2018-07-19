@@ -9,7 +9,10 @@
 
         <div class="card-body">
             <p class="card-text">
-                There are {{ book_count }} books by {{ author_count }} authors in {{ genre_count }} genres in this library.
+                There are {{ book_count }} book{{ book_count|pluralize }}
+                by {{ author_count }} author{{ author_count|pluralize }}
+                in {{ genre_count }} genre{{ genre_count|pluralize }}
+                in this library.
             </p>
         </div>
     </div>
