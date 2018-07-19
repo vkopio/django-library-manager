@@ -3,6 +3,11 @@
 {% block content %}
     <h1>Books</h1>
 
+    <form action="{% url 'library_app:book_list' %}" method="get">
+        <input type="text" name="search">
+        <input type="submit" value="Search" />
+    </form>
+
     {% if books %}
         <table class="table">
             <tr>

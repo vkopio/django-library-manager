@@ -1,3 +1,5 @@
+from django.contrib.postgres.search import TrigramSimilarity
+from django.db import connection
 from django.views import generic
 from library_app.models import Book
 
@@ -7,6 +9,15 @@ class BookListView(generic.ListView):
     paginate_by = 20
 
     def get_queryset(self):
+        search = self.request.GET.get('search', False)
+
+        if search and connection.vendor == 'postgresql':
+            return Book.objects.annotate(
+                similarity=TrigramSimilarity('name', search),
+            ).filter(
+                similarity__gt=0.3
+            ).order_by('-similarity')
+
         return Book.objects.order_by('name')
 
 
