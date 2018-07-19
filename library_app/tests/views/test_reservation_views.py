@@ -1,4 +1,5 @@
 from django.urls import reverse
+from django.contrib.messages import get_messages
 from library_app.tests.extended_test_case import ExtendedTestCase
 from library_app.sample.utilities.factories import create_book
 from library_app.models import Reservation
@@ -22,8 +23,10 @@ class ReservationViewTests(ExtendedTestCase):
         self.__post_reservation_create(self.book.id)
         self.__post_reservation_create(self.book.id)
 
+        messages = list(get_messages(self.response.wsgi_request))
+
         self.assertEqual(Reservation.objects.count(), 1)
-        self.assertEqual(self.response.context['errors'], ['User has already reserved this book.'])
+        self.assertEqual(str(messages[0]), 'User has already reserved this book.')
 
     def test_cannot_reserve_a_book_if_not_logged_in(self):
         self.logout()
@@ -42,8 +45,10 @@ class ReservationViewTests(ExtendedTestCase):
         for book in books:
             self.__post_reservation_create(book.id)
 
+        messages = list(get_messages(self.response.wsgi_request))
+
         self.assertEqual(Reservation.objects.count(), 3)
-        self.assertEqual(self.response.context['errors'], ['User has reserved maximum number of books.'])
+        self.assertEqual(str(messages[0]), 'User has reserved maximum number of books.')
 
     def test_user_can_cancel_a_reservation(self):
         self.__post_reservation_create(self.book.id)

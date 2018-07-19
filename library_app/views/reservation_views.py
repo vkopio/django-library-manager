@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
+from django.contrib import messages
 from library_app.models import Book, Reservation
 
 
@@ -13,10 +14,10 @@ def reservation_create(request, book_id):
         reservation.full_clean()
         reservation.save()
     except ValidationError as error:
-        context = {
-            'book': book,
-            'errors': error.messages
-        }
+        context = {'book': book}
+
+        for message in error.messages:
+            messages.add_message(request, messages.WARNING, message)
 
         return render(request, 'library_app/book_detail.html', context)
 
