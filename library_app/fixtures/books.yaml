@@ -17,3 +17,233 @@
     genres: [2]
     creation_date: 2018-01-01 00:00:00 +00
     modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 3
+  fields:
+    name: Puhdistus
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [2]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 4
+  fields:
+    name: Uuni
+    pub_date: 1970-01-01
+    authors: [4]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 5
+  fields:
+    name: Nenäpäivä
+    pub_date: 1970-01-01
+    authors: [5]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 6
+  fields:
+    name: Hytti nro 6
+    pub_date: 1970-01-01
+    authors: [6]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 7
+  fields:
+    name: Jää
+    pub_date: 1970-01-01
+    authors: [7]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 7
+  fields:
+    name: Vieras mies tuli taloon
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 8
+  fields:
+    name: Jumalaa paossa
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 9
+  fields:
+    name: Suuri illuusioni
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 10
+  fields:
+    name: Appelsiininsiemen
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 11
+  fields:
+    name: Keisarin tekohampaat
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 12
+  fields:
+    name: Punainen Madonna
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 13
+  fields:
+    name: Mies ja haave
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 14
+  fields:
+    name: Sielu ja liekki
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 15
+  fields:
+    name: Palava nuoruus
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 16
+  fields:
+    name: Surun ja ilon kaupunki
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 17
+  fields:
+    name: Ihmeellinen Joosef
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 18
+  fields:
+    name: Jälkinäytös
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 19
+  fields:
+    name: Kuka murhasi rouva Skrofin?
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 20
+  fields:
+    name: Komisario Palmun erehdys
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 21
+  fields:
+    name: Antero ei enää palaa
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 22
+  fields:
+    name: Kaarina Maununtytär
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 23
+  fields:
+    name: Isästä poikaan
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.book
+  pk: 24
+  fields:
+    name: Rakkaus vainoaikaan
+    pub_date: 1970-01-01
+    authors: [2]
+    genres: [3]
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00

@@ -15,3 +15,48 @@
     birth_date: 1908-09-19
     creation_date: 2018-01-01 00:00:00 +00
     modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.author
+  pk: 3
+  fields:
+    first_name: Sofi
+    last_name: Oksanen
+    birth_date: 1970-01-01
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.author
+  pk: 4
+  fields:
+    first_name: Antti
+    last_name: Hyry
+    birth_date: 1970-01-01
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.author
+  pk: 5
+  fields:
+    first_name: Mikko
+    last_name: Rimminen
+    birth_date: 1970-01-01
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.author
+  pk: 6
+  fields:
+    first_name: Rosa
+    last_name: Liksom
+    birth_date: 1970-01-01
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
+
+- model: library_app.author
+  pk: 7
+  fields:
+    first_name: Ulla-Lena
+    last_name: Lundberg
+    birth_date: 1970-01-01
+    creation_date: 2018-01-01 00:00:00 +00
+    modification_date: 2018-01-01 00:00:00 +00
