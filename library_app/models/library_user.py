@@ -21,7 +21,7 @@ class LibraryUser(BaseModel):
         reservations = Reservation.objects.filter(book=book)
 
         for i, reservation in enumerate(reservations):
-            if reservation.reserver == self:
+            if reservation.reserver_id == self.id:
                 return i + 1
 
         return 0

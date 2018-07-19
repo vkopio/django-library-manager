@@ -27,7 +27,7 @@ class BookListView(generic.ListView):
 
 
 def book_detail(request, book_id):
-    book = get_object_or_404(Book, id=book_id)
+    book = get_object_or_404(Book.objects.with_related_objects().select_related('borrowing'), id=book_id)
     context = {'book': book}
 
     if request.user.is_authenticated:
