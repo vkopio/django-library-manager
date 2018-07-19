@@ -1,3 +1,4 @@
+from django.shortcuts import render, get_object_or_404
 from django.db import connection
 from django.views import generic
 from library_app.models import Book
@@ -25,14 +26,11 @@ class BookListView(generic.ListView):
         return context
 
 
-class BookDetailView(generic.DetailView):
-    model = Book
+def book_detail(request, book_id):
+    book = get_object_or_404(Book, id=book_id)
+    context = {'book': book}
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        user = self.request.user
+    if request.user.is_authenticated:
+        context['reservation_queue_position'] = request.user.libraryuser.reservation_queue_position(book=book)
 
-        if user.is_authenticated:
-            context['reservation_queue_position'] = user.libraryuser.reservation_queue_position(book=self.get_object())
-
-        return context
+    return render(request, 'library_app/book_detail.html', context)
