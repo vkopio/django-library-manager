@@ -68,4 +68,4 @@ class BookManagerTests(ExtendedTestCase):
         self.assertEqual(list(Book.objects.most_borrowed(2)), [self.book1, self.book3])
 
     def test_everything_is_returned_if_most_borrowed_limit_is_reached(self):
-        self.assertEqual(list(Book.objects.most_borrowed(4)), [self.book1, self.book3, self.book2])
+        self.assertEqual(list(Book.objects.most_borrowed(4)), [self.book1, self.book3])

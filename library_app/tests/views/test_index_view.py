@@ -9,7 +9,7 @@ class IndexViewTests(TestCase):
         self.__assert_context(0, 0, 0, [], [])
 
     def test_with_objects(self):
-        book = create_book('test', 'test')
+        book = create_book('test', 'test', borrowings_count=1)
         create_author('test', 'test')
         create_genre('test')
 
